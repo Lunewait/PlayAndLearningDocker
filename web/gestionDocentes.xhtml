@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml">
+
+    <ui:define name="content">
+        <h:form id="formListadoDocentes">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Listado de Docentes</h4>
+                    <h:commandButton action="#{docenteBean.prepararNuevo()}" value="+ Nuevo Docente" styleClass="btn btn-primary"/>
+                </div>
+                <div class="card-body">
+                    <h:dataTable value="#{docenteBean.docentes}" var="docente" styleClass="table table-hover">
+                        <h:column><f:facet name="header">ID</f:facet>#{docente.id}</h:column>
+                        <h:column><f:facet name="header">Nombre</f:facet>#{docente.nombre}</h:column>
+                        <h:column><f:facet name="header">Apellido</f:facet>#{docente.apellido}</h:column>
+                        <h:column><f:facet name="header">Especialidad</f:facet>
+                            <h:outputText value="#{docente.especialidad}" styleClass="badge bg-success"/>
+                        </h:column>
+                        <h:column><f:facet name="header">Acciones</f:facet>
+                            <h:commandButton action="#{docenteBean.prepararEdicion(docente.id)}" value="Editar" styleClass="btn btn-sm btn-warning me-2"/>
+                            <h:commandButton action="#{docenteBean.eliminar(docente.id)}" value="Eliminar" styleClass="btn btn-sm btn-danger">
+                                <f:ajax render=":formListadoDocentes" />
+                            </h:commandButton>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

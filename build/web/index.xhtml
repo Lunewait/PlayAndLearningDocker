@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml">
+
+    <ui:define name="title">
+        Dashboard Principal
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm border">
+            <div class="container-fluid py-3">
+                <h1 class="display-5 fw-bold">Sistema de Gestión Integral</h1>
+                <p class="col-md-8 fs-4">
+                    Bienvenido al panel de administración. Seleccione un módulo para comenzar a trabajar.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-pencil-square" style="font-size: 3rem; color: #0d6efd;"></i>
+                        <h5 class="card-title mt-3">Gestión de Talleres</h5>
+                        <p class="card-text">Cree, edite y administre todos los talleres virtuales y presenciales.</p>
+                        <h:link outcome="gestionTalleres" styleClass="btn btn-primary">Ir al Módulo</h:link>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-video3" style="font-size: 3rem; color: #198754;"></i>
+                        <h5 class="card-title mt-3">Gestión de Docentes</h5>
+                        <p class="card-text">Administre el personal docente, sus perfiles y especialidades.</p>
+                        <h:link outcome="gestionDocentes" styleClass="btn btn-success">Ir al Módulo</h:link>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm bg-light">
+                    <div class="card-body text-center text-muted">
+                        <i class="bi bi-cart-plus" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">Gestión de Compras</h5>
+                        <p class="card-text">Registre proveedores, órdenes de compra y gestione el inventario.</p>
+                        <a href="#" class="btn btn-secondary disabled">Próximamente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            
+    <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+            <i class="bi bi-truck" style="font-size: 3rem; color: #fd7e14;"></i>
+            <h5 class="card-title mt-3">Gestión de Proveedores</h5>
+            <p class="card-text">Administre los datos de contacto y la información de sus proveedores.</p>
+            <h:link outcome="gestionProveedores" styleClass="btn" style="background-color: #fd7e14; color: white;">Ir al Módulo</h:link>
+        </div>
+    </div>
+</div>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml">
+
+    <ui:define name="title">Formulario de Proveedor</ui:define>
+
+    <ui:define name="content">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h4>#{proveedorBean.proveedorSeleccionado.id == 0 ? 'Nuevo Proveedor' : 'Editar Proveedor'}</h4>
+            </div>
+            <div class="card-body">
+                <h:form>
+                    <h:inputHidden value="#{proveedorBean.proveedorSeleccionado.id}" />
+                    <div class="mb-3">
+                        <label class="form-label">Razón Social:</label>
+                        <h:inputText value="#{proveedorBean.proveedorSeleccionado.razonSocial}" styleClass="form-control" required="true" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">RUC:</label>
+                        <h:inputText value="#{proveedorBean.proveedorSeleccionado.ruc}" styleClass="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre de Contacto:</label>
+                        <h:inputText value="#{proveedorBean.proveedorSeleccionado.contacto}" styleClass="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono:</label>
+                        <h:inputText value="#{proveedorBean.proveedorSeleccionado.telefono}" styleClass="form-control" />
+                    </div>
+                    <h:commandButton action="#{proveedorBean.guardar()}" value="Guardar Cambios" styleClass="btn btn-success"/>
+                    <h:link outcome="gestionProveedores" value="Cancelar" styleClass="btn btn-secondary ms-2"/>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
+
