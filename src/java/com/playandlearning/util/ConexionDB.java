@@ -4,9 +4,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 public class ConexionDB {
     // --- ¡¡¡MODIFICAR ESTOS DATOS!!! ---
-    private static final String URL = "jdbc:mysql://localhost:3306/playandlearning_db";
+    private static final String URL = "jdbc:mysql://centerbeam.proxy.rlwy.net:32598/railway";
     private static final String USER = "root";
-    private static final String PASSWORD = ""; // Escriba su contraseña aquí
+    private static final String PASSWORD = "vkqLqRJXBhWHhxuFiOTYlpOWjJIZwaqh"; // Escriba su contraseña aquí
     // ------------------------------------
 
     public static Connection getConnection() throws SQLException {
